@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '420px',
+      },
       colors: {
         primary: "#00f2ff",
         secondary: "#7000ff",
@@ -23,4 +26,3 @@ export default {
   },
   plugins: [],
 }
-

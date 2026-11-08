@@ -8,7 +8,8 @@ const StarryBackground = () => {
     const container = containerRef.current;
     container.innerHTML = '';
 
-    const starCount = 150;
+    const isMobile = window.innerWidth < 768;
+    const starCount = isMobile ? 65 : 120;
 
     for (let i = 0; i < starCount; i++) {
       const star = document.createElement('div');
@@ -16,15 +17,14 @@ const StarryBackground = () => {
 
       star.className = 'star';
       if (type > 0.8) star.style.background = '#00f2ff';
-      if (type > 0.95) star.style.background = '#7000ff';
+      if (type > 0.94) star.style.background = '#7000ff';
 
       const size = Math.random() * 2 + 0.5;
       const x = Math.random() * 100;
       const y = Math.random() * 100;
-      const z = Math.random() * 1000 - 500;
+      const z = Math.random() * 600 - 300;
       const delay = Math.random() * -20;
       const duration = 15 + Math.random() * 15;
-      const twinkleDur = 2 + Math.random() * 3;
 
       Object.assign(star.style, {
         width: `${size}px`,
@@ -40,12 +40,13 @@ const StarryBackground = () => {
       container.appendChild(star);
     }
 
-    for (let i = 0; i < 4; i++) {
+    const nebulaCount = isMobile ? 2 : 3;
+    for (let i = 0; i < nebulaCount; i++) {
       const nebula = document.createElement('div');
       nebula.className = 'nebula';
-      nebula.style.left = `${Math.random() * 80 - 20}%`;
-      nebula.style.top = `${Math.random() * 80 - 20}%`;
-      nebula.style.opacity = Math.random() * 0.4 + 0.1;
+      nebula.style.left = `${Math.random() * 70}%`;
+      nebula.style.top = `${Math.random() * 70}%`;
+      nebula.style.opacity = `${Math.random() * 0.3 + 0.08}`;
       container.appendChild(nebula);
     }
   }, []);
