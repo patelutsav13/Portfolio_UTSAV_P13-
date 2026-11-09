@@ -6,7 +6,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, ExternalLink, Sparkles } from 'lucide-react';
 
-import PrimeAIImg from '../1000056943.jpg';
+import PrimeAIImg from '../Screenshot_20261109_075036.jpg';
 import TripImg from '../TRIP123456.png';
 import FoodImg from '../FOOD123.jpg';
 import RealImg from '../Real123.jpg';
